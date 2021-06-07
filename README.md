@@ -31,11 +31,17 @@ Course Length
 Course Outline
 
 Welcome!
+
 Chapter 1: Setting up
+
 Chapter 2: Service Mocking
+
 Chapter 3: Going Real-Time
+
 Chapter 4: Building CLI Tools
+
 Chapter 5: Navigating the Ecosystem
+
 Chapter 6: What’s Next?
 
 
