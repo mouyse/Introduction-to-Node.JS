@@ -1,5 +1,7 @@
 # Introduction-to-Node.JS
 
+Taking the course from edX to get a basic understanding of NodeJS
+
 Introduction to Node.js (LFW111x)
 
 Course Overview
@@ -24,25 +26,5 @@ By the end of this course, you should be able to:
 ● Rapidly prototype real-time services.
 ● Discover and use ecosystem utilities.
 
-Course Length
 
-7-8 hours
-
-Course Outline
-
-Welcome!
-
-Chapter 1: Setting up
-
-Chapter 2: Service Mocking
-
-Chapter 3: Going Real-Time
-
-Chapter 4: Building CLI Tools
-
-Chapter 5: Navigating the Ecosystem
-
-Chapter 6: What’s Next?
-
-
-https://www.edx.org/course/introduction-to-nodejs-2
+Course link: https://www.edx.org/course/introduction-to-nodejs-2
