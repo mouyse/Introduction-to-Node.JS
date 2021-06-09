@@ -4,24 +4,20 @@ module.exports = async function (fastify, opts) {
   function monitorMessages (socket) {
     socket.on('message', (data) => {
       try {
-      const { cmd, payload } = JSON.parse(data)
-      if (cmd === 'update-category') {
-        sendCurrentOrders(payload.category, socket)
+        const { cmd, payload } = JSON.parse(data)
+        if (cmd === 'update-category') {
+          sendCurrentOrders(payload.category, socket)
+        }
+      } catch (err) {
+        fastify.log.warn('WebSocket Message (data: %o) Error: %s', data, err.message)
       }
-    } catch (err) {
-      fastify.log.warn(
-        'WebSocket Message (data: %o) Error: %s',
-        data,
-        err.message
-      )
-    }
-  })
-}
-function sendCurrentOrders(category, socket) {
-  for (const order of fastify.currentOrders(category)) {
-    socket.send(order)
+    })
   }
-}
+  function sendCurrentOrders(category, socket) {
+    for (const order of fastify.currentOrders(category)) {
+      socket.send(order)
+    }
+  }
 
   fastify.get(
     '/:category',
@@ -35,5 +31,11 @@ function sendCurrentOrders(category, socket) {
       }
     }
   )
+
+  fastify.post('/:id', async (request) => {
+    const { id } = request.params
+    fastify.addOrder(id, request.body.amount)
+    return {ok: true}
+  })
 
 }
