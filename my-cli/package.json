@@ -12,7 +12,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ansi-escapes": "^5.0.0",
+    "chalk": "^4.1.1",
     "commist": "^2.0.0",
+    "enquirer": "^2.3.6",
     "got": "^11.8.2",
     "minimist": "^1.2.5"
   }
